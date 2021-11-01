@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Main from './pages/Main';
 
-import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Show from './pages/Show';
 
 import { auth } from './services/firebase';
 
@@ -17,13 +18,16 @@ function App() {
   
   const [ user, setUser ] = useState(null);
 
-  const [ contacts, setContacts ] = useState([]);
+  const [ currencies, setCurrencies ] = useState([]);
 
-  const API_URL = 'http://localhost:3001/api/contacts';
-  // TODO: add the heroku API_URL
+  const fetchData = useRef(null);
+
+  const API_URL = 'http://localhost:3000/api/currencies'; // Dev URL
+  
+  // const API_URL = 'https://react-crm-api.herokuapp.com/api/contacts'; // Production URL
 
   // contacts helper functions
-  const getContacts = async () => {
+  const getCurrencies = async () => {
     if(!user) return;
     
     // get a secure id token from our firebase user
@@ -34,24 +38,60 @@ function App() {
         'Authorization': 'Bearer ' + token
       }
     });
-    const contacts = await response.json();
-    setContacts(contacts);
+    const currencies = await response.json();
+    setCurrencies(currencies);
   }
 
-  const createContact = async person => {
+  const createCurrency = async person => {
+    if(!user) return;
+    const token = await user.getIdToken();
     const data = {...person, managedBy: user.uid} // attach logged in user's uid to the data we send to the server
     await fetch(API_URL, {
       method: 'POST', 
-      headers: {'Content-type': 'Application/json'},
+      headers: {
+        'Content-type': 'Application/json',
+        'Authorization': 'Bearer ' + token
+      },
       body: JSON.stringify(data)
     });
-    getContacts(); // we can now refresh our list of contacts
+    getCurrencies(); // we can now refresh our list of contacts
   } 
 
+  const createNote = async (note, id) => {
+    if(!user) return;
+    const token = await user.getIdToken();
+    const data = { ...note, createdBy: user.uid };
+    await fetch(`${API_URL}/${id}/notes`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'Application/json',
+        'Authorization': 'Bearer ' + token
+      },
+      body: JSON.stringify(data)
+    });
+    getCurrencies();
+  }
+
+  // create a reference to our createContact function that persists between renders
+  // this will help mitigate memory leaks
   useEffect(() => {
-    const unsubscribe =  auth.onAuthStateChanged(user => setUser(user));
+    fetchData.current = getCurrencies;
+  });
+
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      setUser(user);
+
+      if(user) {
+        fetchData.current();
+      } else {
+        setCurrencies([]);
+      }
+      
+    });
+    
     // TODO: only get contacts after a user has signed in
-    getContacts();
     return () => unsubscribe(); // clean up action - remove observer from memory when not needed
   }, [user]);
 
@@ -60,7 +100,7 @@ function App() {
       <Header user={user} />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Main />
           </Route>
           <Route path="/login" render={() => (
             user ? <Redirect to="/dashboard" /> : <Login />
@@ -68,8 +108,16 @@ function App() {
           <Route path="/dashboard" render={() => (
             user ? (
               <Dashboard 
-                contacts={contacts} 
-                createContact={createContact} 
+                currencies={currencies} 
+                createCurrency={createCurrency} 
+              />
+            ) : <Redirect to="/login" />
+          )} />
+          <Route path="/currencies/:id" render={(props) => (
+            user ? (
+              <Show 
+                contact={currencies.find(coin => coin._id === props.match.params.id)} 
+                createNote={createNote}
               />
             ) : <Redirect to="/login" />
           )} />

@@ -6,11 +6,10 @@ const Header = (props) => {
 
     return (
         <StyledHeader>
-            <h1>React CRM</h1>
+            <h1><Link to="/">LOVE_THY_CRYPTO</Link></h1>
             <nav>
                 <ul>
-                    {
-                        props.user ?
+                    {props.user ?
                         <>
                             <li>Welcome, {props.user.displayName}</li>
                             <li>

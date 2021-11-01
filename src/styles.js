@@ -6,7 +6,7 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     padding-left: 1rem;
     height: 5rem;
-    background-color: #000;
+    background-color: red;
     color: #ffffff;
     box-shadow: 1px 1px 3px 2px #808080;
     nav {

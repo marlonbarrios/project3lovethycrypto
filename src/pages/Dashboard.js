@@ -1,91 +1,127 @@
+import { Helmet } from 'react-helmet';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { StyledForm, StyledMain, StyledSection, StyledTable } from '../styles';
 
+
 const Dashboard = (props) => {
+
+    
     const [ formState, setFormState ] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        companyName: "",
+       name: "",
+       symbol: "",
+       image: "",
+        faved: false
     });
 
     // form helper functions
 
     const handleChange = event => {
+        
+        const value = event.target.name === 'faved' 
+        ? event.target.checked 
+        : event.target.value
+
+
         setFormState(prevState => ({
             ...prevState,
-            [event.target.name]: event.target.value
+            [event.target.name]: value
+            
         }));
     }
 
     const handleSubmit = event => {
         event.preventDefault();
         // TODO: adds user's uid to form
-        props.createContact(formState);
+        props.createCurrency(formState);
         setFormState({
-            firstName: "",
-            lastName: "",
-            email: "",
-            companyName: "",
+            name: "",
+           symbol: "",
+           image: "",
+            faved: false
         }); // clear form after its been submitted
     }
 
+
     return (
+        <>
+        <Helmet>
+            <title>Dashboard | ⚛️</title>
+            <meta name="description" content="A simple dashboard for managing contacts" />
+            <meta name="keywords" content="Dashboard, business, tools, customer service" />
+        </Helmet>
         <StyledMain>
-            <h1>Your Contacts</h1>
+     
             <StyledSection>
+    
                 <StyledForm onSubmit={handleSubmit}>
-                    <label>First Name
+                This should come from the api, as alonf list od currencies, then the user select them with a checkbox and then they show up in favorites
+                    <label>Currency Name
                         <input 
                             onChange={handleChange} 
-                            value={formState.firstName} 
-                            name="firstName" 
+                            value={formState.name} 
+                            name="name" 
                             type="text" 
                         />
                     </label>
-                    <label>Last Name
+                    <label>Symbol
                         <input 
                             onChange={handleChange} 
-                            value={formState.lastName} 
-                            name="lastName" 
+                            value={formState.symbol} 
+                            name="symbol" 
                             type="text" 
                         />
                     </label>
-                    <label>Email
+                    <label>Logo
                         <input 
                             onChange={handleChange} 
-                            value={formState.email} 
-                            name="email" 
-                            type="email" 
+                            value={formState.image} 
+                            name="image" 
+                            type="url" 
                         />
                     </label>
-                    <label>Company Name
-                    <input 
-                        onChange={handleChange} 
-                        value={formState.companyName} 
-                        name="companyName" 
-                        type="text" 
-                    />
+                    <label>Current Price
+                        <input 
+                            onChange={handleChange} 
+                            value={formState.current_price} 
+                            name="current_price" 
+                            type="text" 
+                        />
                     </label>
-                    <input type="submit" value="Add Contact" />
+                    
+                    <label>Select
+                        <input 
+                            type="checkbox" 
+                            name="faved" 
+                            onChange={handleChange}
+                            checked={formState.faved} 
+                        />
+                    </label>
+                    <input type="submit" value="Add Fav!" />
                 </StyledForm>
+           
                 <StyledTable>
                     <thead>
+                    <h1>Your Favorites:</h1>
                         <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Company Name</th>
+                            <th>Crypto Name</th>
+                            <th>Symbol</th>
+                            <th>Logo</th>
+                            <th>Curremt Price</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            props.contacts.map(c => (
-                                <tr key={c._id}>
-                                    <td>{c.firstName}</td>
-                                    <td>{c.lastName}</td>
-                                    <td>{c.email}</td>
-                                    <td>{c.companyName}</td>
+                        { 
+
+                        props.currencies.map (currency => (
+                                <tr key={currency._id}>
+                                    <td>{currency.name}</td>
+                                    <td>{currency.symbol}</td>
+                                    <td>{currency.current_price}</td>
+                                    <td><img alt={currency.name}  width="50px" src={currency.image}></img></td>
+                                    <td><Link to={`/currencies/${currency._id}`}>See More Details</Link></td>
+                                    <td><button> delete</button></td>``
                                 </tr>
                             ))
                         }
@@ -93,6 +129,7 @@ const Dashboard = (props) => {
                 </StyledTable>
             </StyledSection>
         </StyledMain>
+    </>
     );
 };
 
