@@ -42,10 +42,16 @@ function App() {
     setCurrencies(currencies);
   }
 
-  const createCurrency = async person => {
+  const createCurrency = async currency => {
+    console.log(currency)
     if(!user) return;
     const token = await user.getIdToken();
-    const data = {...person, managedBy: user.uid} // attach logged in user's uid to the data we send to the server
+    const data = {...currency, 
+
+    
+      managedBy: user.uid
+    
+    } // attach logged in user's uid to the data we send to the server
     await fetch(API_URL, {
       method: 'POST', 
       headers: {
@@ -100,7 +106,7 @@ function App() {
       <Header user={user} />
         <Switch>
           <Route exact path="/">
-       <Main />
+       <Main createCurrency={createCurrency}/>
           </Route>
           <Route path="/login" render={() => (
             user ? <Redirect to="/dashboard" /> : <Login />

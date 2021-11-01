@@ -63,61 +63,18 @@ const Dashboard = (props) => {
             <StyledSection>
  
     
-                <StyledForm onSubmit={handleSubmit}>
                 
-                    <label>Currency Name
-                        <input 
-                            onChange={handleChange} 
-                            value={formState.name} 
-                            name="name" 
-                            type="text" 
-                        />
-                    </label>
-                    <label>Symbol
-                        <input 
-                            onChange={handleChange} 
-                            value={formState.symbol} 
-                            name="symbol" 
-                            type="text" 
-                        />
-                    </label>
-                    <label>Logo
-                        <input 
-                            onChange={handleChange} 
-                            value={formState.image} 
-                            name="image" 
-                            type="url" 
-                        />
-                    </label>
-                    <label>Current Price
-                        <input 
-                            onChange={handleChange} 
-                            value={formState.current_price} 
-                            name="current_price" 
-                            type="text" 
-                        />
-                    </label>
-                    
-                    <label>Select
-                        <input 
-                            type="checkbox" 
-                            name="faved" 
-                            onChange={handleChange}
-                            checked={formState.faved} 
-                        />
-                    </label>
-                    <input type="submit" value="Add Fav!" />
-                    <Home />
-                </StyledForm>
            
                 <StyledTable>
                     <thead>
                   
                         <tr>
+                        <th>Logo</th>
                             <th>Crypto Name</th>
                             <th>Symbol</th>
-                            <th>Logo</th>
                             <th>Curremt Price</th>
+                          
+                           
                             <th>Actions</th>
                         </tr>
                     </thead>

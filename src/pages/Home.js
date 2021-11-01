@@ -6,7 +6,7 @@ const Home = (props) => {
     // loading/loaded helper functions
     const loaded = () => {
         return props.currencies.map(currency => (
-            
+            //add onChange a creaet new
             <div key={currency._id} className="currency">
                
                 <Link to={`/currencies/${currency.name}`}>
@@ -16,7 +16,7 @@ const Home = (props) => {
                 {currency.name}
             
                 </Link>
-                <input type="checkbox" name="box1" class="cBox" /> 
+                <input type="checkbox" name="box1" class="cBox" onChange={() => props.createCurrency(currency)}/> 
                
             </div>
            
