@@ -28,12 +28,13 @@ const Show = (props) => {
                 <h1>Show</h1>
                 <section>
                     <h3>{props.currency.name} {props.currency.symbol}</h3>
+                 
                     <p><img width="50px" src={props.currency.image}></img></p>
                     <h3>{props.currency.current_price}</h3>
 
                    
                    
-                    <p style={{fontWeight: 700}}>{props.currency.faves ? 'FAV' : 'Not fav'}</p>
+                    <p style={{fontWeight: 700}}>{props.currency.faved ? 'FAV' : 'Not fav'}</p>
                     {
                         props.currency.notes.length ?
                         <>

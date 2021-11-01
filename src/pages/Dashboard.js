@@ -2,6 +2,8 @@ import { Helmet } from 'react-helmet';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { StyledForm, StyledMain, StyledSection, StyledTable } from '../styles';
+import Main from './Main';
+import Home from './Home';
 
 
 const Dashboard = (props) => {
@@ -34,6 +36,7 @@ const Dashboard = (props) => {
         event.preventDefault();
         // TODO: adds user's uid to form
         props.createCurrency(formState);
+        console.log('HANDLESUBMIT', formState)
         setFormState({
             name: "",
            symbol: "",
@@ -42,20 +45,26 @@ const Dashboard = (props) => {
         }); // clear form after its been submitted
     }
 
-
+ 
     return (
+       
+      
         <>
         <Helmet>
+
             <title>Dashboard | ⚛️</title>
             <meta name="description" content="A simple dashboard for managing contacts" />
             <meta name="keywords" content="Dashboard, business, tools, customer service" />
         </Helmet>
+     
+       
         <StyledMain>
      
             <StyledSection>
+ 
     
                 <StyledForm onSubmit={handleSubmit}>
-                This should come from the api, as alonf list od currencies, then the user select them with a checkbox and then they show up in favorites
+                
                     <label>Currency Name
                         <input 
                             onChange={handleChange} 
@@ -98,11 +107,12 @@ const Dashboard = (props) => {
                         />
                     </label>
                     <input type="submit" value="Add Fav!" />
+                    <Home />
                 </StyledForm>
            
                 <StyledTable>
                     <thead>
-                    <h1>Your Favorites:</h1>
+                  
                         <tr>
                             <th>Crypto Name</th>
                             <th>Symbol</th>
@@ -112,9 +122,11 @@ const Dashboard = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        { 
 
+                        { 
+  
                         props.currencies.map (currency => (
+                           
                                 <tr key={currency._id}>
                                     <td>{currency.name}</td>
                                     <td>{currency.symbol}</td>
@@ -125,6 +137,7 @@ const Dashboard = (props) => {
                                 </tr>
                             ))
                         }
+
                     </tbody>
                 </StyledTable>
             </StyledSection>

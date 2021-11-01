@@ -22,7 +22,7 @@ function App() {
 
   const fetchData = useRef(null);
 
-  const API_URL = 'http://localhost:3000/api/currencies'; // Dev URL
+  const API_URL = 'http://localhost:3001/api/currencies'; // Dev URL
   
   // const API_URL = 'https://react-crm-api.herokuapp.com/api/contacts'; // Production URL
 
@@ -100,7 +100,7 @@ function App() {
       <Header user={user} />
         <Switch>
           <Route exact path="/">
-            <Main />
+       <Main />
           </Route>
           <Route path="/login" render={() => (
             user ? <Redirect to="/dashboard" /> : <Login />
@@ -116,7 +116,7 @@ function App() {
           <Route path="/currencies/:id" render={(props) => (
             user ? (
               <Show 
-                contact={currencies.find(coin => coin._id === props.match.params.id)} 
+                currency={currencies.find(currency => currency._id === props.match.params.id)} 
                 createNote={createNote}
               />
             ) : <Redirect to="/login" />
