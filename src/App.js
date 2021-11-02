@@ -63,6 +63,18 @@ function App() {
     getCurrencies(); // we can now refresh our list of contacts
   } 
 
+
+  const removeCurrencies = async (id) => {
+    // make delete request to create people
+    await fetch(URL + id, {
+      method: "DELETE",
+    });
+    // update list of people
+    getCurrencies();
+  };
+  useEffect(() => getCurrencies(), []);
+
+
   const createNote = async (note, id) => {
     if(!user) return;
     const token = await user.getIdToken();
@@ -111,11 +123,13 @@ function App() {
           <Route path="/login" render={() => (
             user ? <Redirect to="/dashboard" /> : <Login />
           )} />
-          <Route path="/dashboard" render={() => (
+          <Route  user={user} path="/dashboard" render={() => (
             user ? (
               <Dashboard 
                 currencies={currencies} 
                 createCurrency={createCurrency} 
+                removeCurrencies={removeCurrencies}
+           
               />
             ) : <Redirect to="/login" />
           )} />
@@ -124,6 +138,7 @@ function App() {
               <Show 
                 currency={currencies.find(currency => currency._id === props.match.params.id)} 
                 createNote={createNote}
+                
               />
             ) : <Redirect to="/login" />
           )} />

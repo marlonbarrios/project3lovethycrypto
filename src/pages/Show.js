@@ -1,8 +1,16 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { StyledMain } from '../styles';
+import { Link } from 'react-router-dom';
 
 const Show = (props) => {
+
+    <Helmet>
+    <title>See Details | React CRM ⚛️</title>
+    <meta name="description" content="See details for the following contact" />
+    <meta name="keywords" content="CRM, Client Relationship Management, Business, Tools" />
+</Helmet>
+
     const [formState, setFormState ] = useState({
         content: ""
     });
@@ -19,22 +27,28 @@ const Show = (props) => {
 
     return (
         <>
-            <Helmet>
-                <title>See Details | React CRM ⚛️</title>
-                <meta name="description" content="See details for the following contact" />
-                <meta name="keywords" content="CRM, Client Relationship Management, Business, Tools" />
-            </Helmet>
+           
             <StyledMain>
-                <h1>Show</h1>
+                <h1>Selected Currency</h1>
                 <section>
-                    <h3>{props.currency.name} {props.currency.symbol}</h3>
+
+                    <h3>{props.currency.name}/{props.currency.symbol}</h3>
                  
                     <p><img width="50px" src={props.currency.image}></img></p>
-                    <h3>{props.currency.current_price}</h3>
+                    <h3>Price in UDS: {props.currency.current_price}</h3>
+                    <h3>Market Cap: {props.currency.market_cap_rank}</h3>
+                    <h3>Price Change in last 24 hours:  {props.currency.price_change_24h}</h3>
+                    <h3>All Time Hight:  {props.currency.ath}</h3>
+                    <h3>Data last Updated: {props.currency.last_updated}</h3>
+                    <h3><Link target="_bank" to={{ pathname:` https://www.youtube.com/results?search_query=what+is+${props.currency.name}`}}>
+            YouTube videos about {props.currency.name}</Link></h3>
+                    <h3><Link target="_bank" to={{ pathname:`http://www.google.com/search?q=${props.currency.name}+news+link`}}>
+            News about {props.currency.name}</Link></h3>
+           
 
+            
                    
-                   
-                    <p style={{fontWeight: 700}}>{props.currency.faved ? 'FAV' : 'Not fav'}</p>
+                    {/* <p style={{fontWeight: 700}}>{props.currency.faved ? 'FAV' : 'Not fav'}</p> */}
                     {
                         props.currency.notes.length ?
                         <>
