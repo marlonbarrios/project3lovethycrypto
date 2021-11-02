@@ -5,12 +5,13 @@ import { StyledMain, StyledSection, StyledTable } from '../styles';
 
 
 const Dashboard = (props) => {
-    const currency = props.currency;
+    // console.log(props.currency)
+    // const currency = props.currency;
  
 
-const removeCurrency = () => {
+const removeCurrency = (currency) => {
         props.removeCurrencies(currency._id);
-        props.history.push("/");
+        // props.history.push("/");
       };
     
     return (
@@ -29,8 +30,7 @@ const removeCurrency = () => {
            
                 <StyledTable>
                     <thead>
-                    
-                    
+                   
                         <tr>
                          
                         <th>Logo</th>
@@ -51,7 +51,7 @@ const removeCurrency = () => {
                                     <td>{currency.current_price}</td>
                                     <td><img alt={currency.name}  width="50px" src={currency.image}></img></td>
                                     <td><Link to={`/currencies/${currency._id}`}>See More Details</Link></td>
-                                    <td><button id="delete" onClick={removeCurrency}>DELETE</button></td>
+                                    <td><button id="delete" onClick={() =>removeCurrency(currency)}>DELETE</button></td>
                                 </tr>
                             ))
                         }

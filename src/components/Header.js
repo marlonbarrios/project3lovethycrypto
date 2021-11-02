@@ -6,7 +6,7 @@ const Header = (props) => {
 
     return (
         <StyledHeader>
-            <h1><Link to="/">LOVE_THY_CRYPTO</Link></h1>
+            <h1><Link to="/">PCT </Link></h1>
             <nav>
                 <ul>
                     {props.user ?

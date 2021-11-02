@@ -45,12 +45,7 @@ const Show = (props) => {
                     <h3><Link target="_bank" to={{ pathname:`http://www.google.com/search?q=${props.currency.name}+news+link`}}>
             News about {props.currency.name}</Link></h3>
            
-
-            
-                   
-                    {/* <p style={{fontWeight: 700}}>{props.currency.faved ? 'FAV' : 'Not fav'}</p> */}
-                    {
-                        props.currency.notes.length ?
+                    {props.currency.notes.length ?
                         <>
                             <br />
                                 {props.currency.notes.map(n => 

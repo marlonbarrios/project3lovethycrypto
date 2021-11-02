@@ -29,10 +29,12 @@ function App() {
   // contacts helper functions
   const getCurrencies = async () => {
     if(!user) return;
-    
+  
     // get a secure id token from our firebase user
     const token = await user.getIdToken();
+  
     const response = await fetch(API_URL, {
+
       method: 'GET',
       headers: {
         'Authorization': 'Bearer ' + token
@@ -65,21 +67,26 @@ function App() {
 
 
   const removeCurrencies = async (id) => {
-    // make delete request to create people
-    await fetch(URL + id, {
+  console.log(id)
+    if(!user) return;
+    const token = await user.getIdToken();
+    await fetch(`${API_URL}/dashboard/${id}`, {
       method: "DELETE",
+      headers: {
+        'Content-type': 'Application/json',
+        'Authorization': 'Bearer ' + token
+      },
     });
     // update list of people
     getCurrencies();
   };
-  useEffect(() => getCurrencies(), []);
 
 
   const createNote = async (note, id) => {
     if(!user) return;
     const token = await user.getIdToken();
     const data = { ...note, createdBy: user.uid };
-    await fetch(`${API_URL}/${id}/notes`, {
+    await fetch(`${API_URL}/${id}`, {
       method: 'POST',
       headers: {
         'Content-type': 'Application/json',
@@ -118,14 +125,15 @@ function App() {
       <Header user={user} />
         <Switch>
           <Route exact path="/">
-       <Main createCurrency={createCurrency}/>
+       <Main createCurrency={createCurrency} user={user}/>
           </Route>
           <Route path="/login" render={() => (
-            user ? <Redirect to="/dashboard" /> : <Login />
+            user ? <Redirect to="/" /> : <Login />
           )} />
           <Route  user={user} path="/dashboard" render={() => (
             user ? (
               <Dashboard 
+              user={user}
                 currencies={currencies} 
                 createCurrency={createCurrency} 
                 removeCurrencies={removeCurrencies}
