@@ -5,11 +5,14 @@ export const StyledHeader = styled.header`
     align-items: center;
     justify-content: space-between;
     padding-left: 1rem;
-    height: 5rem;
+    height: 6rem;
     background-color: red;
     color: #ffffff;
-    box-shadow: 1px 1px 3px 2px #808080;
+    box-shadow: 1px 1px 5px 2px #808080;
+    
     nav {
+        margin-left: 10rem;
+            margin-right: 10rem;
         display: flex;
         align-items: center;
         ul {
@@ -19,7 +22,7 @@ export const StyledHeader = styled.header`
             li {
                 margin-right: 1.5rem;
                 font-size: 1.5rem;
-                font-weight: 700;
+                font-weight: 600;
                 img {
                     height: 50px;
                     border-radius: 50%;
@@ -34,6 +37,8 @@ export const StyledHeader = styled.header`
             }
         }
     }
+ 
+    
 `;
 
 
@@ -42,13 +47,8 @@ export const StyledMain = styled.main`
     display: flex;  
     flex-direction: column;
     align-items: center;
-    padding-top: 3rem;
-    @media(min-width: 975px) {
-        h1 {
-            align-self: flex-start;
-            margin-left: 10rem;
-        }
-    }
+    padding-top: 1rem;
+ 
 `;
 
 
@@ -61,18 +61,39 @@ export const StyledFooter = styled.footer`
 `;
 
 
+
+
 export const StyledSection = styled.section`
     display: flex;
     justify-content: space-evenly;
     flex-direction: column-reverse;
     min-width: 100%;
     flex-grow: 1;
-    padding: 0 3rem;
+
     @media(min-width: 975px) {
-        margin-top: 3rem;
+        margin-top: 1rem;
         flex-direction: row;
         min-width: 70vw;
         padding: 0;
+    }
+`;
+
+
+
+export const StyledDiv = styled.div`
+  
+    justify-content: space-evenly;
+    min-width: 80%;
+    
+    h3 {
+            margin-left: 5rem;
+            margin-right: 5rem;
+        }
+    text-align: center;
+    @media(min-width: 975px) {
+    
+        min-width: 70vw;
+      
     }
 `;
 
@@ -101,10 +122,13 @@ export const StyledForm = styled.form`
 export const StyledTable = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
+
   width: 100%;
   th, td {
-        text-align: left;
-        padding: 5px;
+        text-align: center;
+        padding: 1px;
+        border-top: 1px solid black;
+       padding-top: 5px;
   }
   tr:nth-child(even) {
         background-color: #f2f2f2;

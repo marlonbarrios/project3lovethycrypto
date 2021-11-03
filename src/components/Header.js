@@ -2,13 +2,17 @@ import { Link } from 'react-router-dom';
 import { logOut } from '../services/firebase';
 import { StyledHeader } from '../styles.js';
 
+
+
+
 const Header = (props) => {
 
     return (
         <StyledHeader>
-            <h1><Link to="/">PCT </Link></h1>
+           
             <nav>
                 <ul>
+                    <li> <h1><Link to="/">PCT </Link></h1></li>
                     {props.user ?
                         <>
                             <li>
@@ -17,11 +21,11 @@ const Header = (props) => {
                                     alt={props.user.displayName} 
                                 />  
                             </li>
-                            <li>Welcome, {props.user.displayName}</li>
+                            <li> Welcome, {props.user.displayName}</li>
                             
                             <li onClick={logOut}>Logout</li>
                             <li>
-                                <Link to="/dashboard">Dashboard</Link>
+                                <Link to="/dashboard">My Selection</Link>
                             </li>
                         </>
                         :<li>

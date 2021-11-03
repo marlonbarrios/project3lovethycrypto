@@ -22,9 +22,9 @@ function App() {
 
   const fetchData = useRef(null);
 
-  const API_URL = 'http://localhost:3001/api/currencies'; // Dev URL
+   //const API_URL = 'http://localhost:3001/api/currencies'; // Dev URL
   
-  // const API_URL = 'https://react-crm-api.herokuapp.com/api/contacts'; // Production URL
+   const API_URL = 'https://love-thy-crypto.herokuapp.com/api/currencies'; // Production URL
 
   // contacts helper functions
   const getCurrencies = async () => {
@@ -67,7 +67,7 @@ function App() {
 
 
   const removeCurrencies = async (id) => {
-  console.log(id)
+ 
     if(!user) return;
     const token = await user.getIdToken();
     await fetch(`${API_URL}/dashboard/${id}`, {

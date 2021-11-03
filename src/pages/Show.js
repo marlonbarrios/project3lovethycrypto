@@ -29,12 +29,12 @@ const Show = (props) => {
         <>
            
             <StyledMain>
-                <h1>Selected Currency</h1>
+               
                 <section>
 
-                    <h3>{props.currency.name}/{props.currency.symbol}</h3>
+                    <h1>{props.currency.name}/{props.currency.symbol}</h1>
                  
-                    <p><img width="50px" src={props.currency.image}></img></p>
+                    <p><img width="150px" src={props.currency.image}></img></p>
                     <h3>Price in UDS: {props.currency.current_price}</h3>
                     <h3>Market Cap: {props.currency.market_cap_rank}</h3>
                     <h3>Price Change in last 24 hours:  {props.currency.price_change_24h}</h3>
