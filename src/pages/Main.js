@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home';
 import Show from '../pages/Show';
 
 const Main = (props) => {
+  const fetchData = useRef(null);
     const [currencies, setCurrencies ] = useState(null); // NOTE: normally I would set this to an empty array
 
     const BASE_URL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false`; // Development
@@ -57,7 +58,9 @@ const Main = (props) => {
     // we will use the useEffect hook to have it's effect function run on page load
 
     // useEffect(() => getPeople()) // why does this syntax create an infinite loop
-    useEffect(() => getCurrencies(), []) // run once on page load, but not for any subsequent state changes
+    useEffect(() => {
+      fetchData.current = getCurrencies;
+    }); // run once on page load, but not for any subsequent state changes
 
     return (
       

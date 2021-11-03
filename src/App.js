@@ -29,10 +29,10 @@ function App() {
   // contacts helper functions
   const getCurrencies = async () => {
     if(!user) return;
-  
+  console.log(user)
     // get a secure id token from our firebase user
     const token = await user.getIdToken();
-  
+    console.log(token)
     const response = await fetch(API_URL, {
 
       method: 'GET',
@@ -41,7 +41,9 @@ function App() {
       }
     });
     const currencies = await response.json();
+    console.log(currencies)
     setCurrencies(currencies);
+    
   }
 
   const createCurrency = async currency => {
