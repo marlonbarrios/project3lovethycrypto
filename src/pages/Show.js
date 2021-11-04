@@ -46,11 +46,11 @@ const Show = (props) => {
                     <h3><Link target="_bank" to={{ pathname:`http://www.google.com/search?q=${props.currency.name}+news+link`}}>
             News about {props.currency.name}</Link></h3>
            
-                    {props.currency.notes.length ?
+                    {/* {props.currency.notes.length ?
                         <>
                             <br />
-                                {props.currency.notes.map(n => 
-                                    <p style={{margin: '1rem 0'}} key={n._id}>{n.content}</p>
+                                {props.currency.notes.map(currency => 
+                                    <p style={{margin: '1rem 0'}} key={currency._id}>{currency.content}</p>
                                 )}
                               
                             <br />
@@ -65,7 +65,7 @@ const Show = (props) => {
                             value={formState.content}
                         ></textarea>
                         <input type="submit" value="Add Note" />
-                    </form>
+                    </form> */}
                     </StyledDiv>
             </StyledMain>
         </>
