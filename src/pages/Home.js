@@ -13,7 +13,7 @@ const Home = (props) => {
         return (
 <StyledMain>
 <StyledDiv>
-                <h3>lovethycrypto is a personal cryptocurrency tracker. Signup, login and select your favorites from the 250 cryptocurrencies listed by <Link target="_bank" to={{pathname:'https://www.coinbase.com/learn/crypto-basics/what-is-market-cap'}}>Market Cap.</Link> </h3>{props.user && <h3>Go to "My List" and explore more data available.</h3>}
+                <h3>lovethycrypto is a personal cryptocurrency tracker. Signup, login and select your favorites from the 250 cryptocurrencies listed by <Link target="_bank" to={{pathname:'https://www.coinbase.com/learn/crypto-basics/what-is-market-cap'}}>Market Cap.</Link> </h3>{props.user && <h3>Click on checkmarks to select and go to "My List" and explore more data available.</h3>}
            {/* <h4>  {new Date().getMonth()}.{new Date().getDay()}.{new Date().getFullYear()}/ {new Date().getHours()}:{new Date().getMinutes()}h </h4> */}
              </StyledDiv>
      <StyledSection>
