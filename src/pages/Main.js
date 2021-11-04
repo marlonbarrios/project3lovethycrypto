@@ -64,8 +64,7 @@ const Main = (props) => {
       
           <Switch>
             <Route exact path="/">
-              
-   <Home currencies={currencies} createCurrency={props.createCurrency} user={props.user}/>
+              <Home currencies={currencies} createCurrency={props.createCurrency} user={props.user}/>
             </Route>
             <Route
               path="/currencies/:id"
