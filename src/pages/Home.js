@@ -1,6 +1,6 @@
 
 
-import { StyledMain, StyledSection, StyledTable } from '../styles';
+import { StyledMain, StyledSection, StyledTable, StyledDiv } from '../styles';
 
 import { Link } from 'react-router-dom';
 
@@ -12,17 +12,15 @@ const Home = (props) => {
     const loaded = () => {
         return (
 <StyledMain>
-     
+<StyledDiv>
+                <h3>lovethycrypto is a personal cryptocurrency tracker. Signup, login and select your favorite currencies from the 250 cryptocurrencies listed by <Link target="_bank" to={{pathname:'https://www.coinbase.com/learn/crypto-basics/what-is-market-cap'}}>Market Cap.</Link> </h3>{props.user && <h3>It will be listed in your dashborad with more data available.</h3>}
+           {/* <h4>  {new Date().getMonth()}.{new Date().getDay()}.{new Date().getFullYear()}/ {new Date().getHours()}:{new Date().getMinutes()}h </h4> */}
+             </StyledDiv>
      <StyledSection>
-     
+
          <StyledTable>
              <thead>
-                 {/* <h3>Select your favorite currency from the 250 cryptocurrencies listed by Marjet Cap. It will be listed in your dashborad with more data avilable.</h3> */}
-             {/* {new Date().getMonth()}.{new Date().getDay()}.{new Date().getFullYear()}/ {new Date().getHours()}:{new Date().getMinutes()}h  */}
-           
-
-
-
+                 
                  <tr>
                  <th>Rank</th>
                  <th>Logo</th>

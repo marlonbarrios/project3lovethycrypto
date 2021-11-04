@@ -14,9 +14,11 @@ body, #root {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Source Code Pro', monospace;
+
   background-attachment: fixed;
+ 
+  
+
 
 }
-
 

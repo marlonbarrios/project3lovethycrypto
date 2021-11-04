@@ -38,7 +38,13 @@ export const StyledHeader = styled.header`
             }
         }
     }
- 
+    @media(min-width: 975px) {
+        margin-top: 1rem;
+        flex-direction: row;
+        min-width: 70vw;
+        padding: 0;
+        font-size: 12px;
+    }
     
 `;
 
@@ -83,9 +89,10 @@ export const StyledSection = styled.section`
 
 
 export const StyledDiv = styled.div`
-   
+   max-width: 400px;
 background-color: white;
-border-radius: 15px;
+border-radius: 20px;
+
 
 
 

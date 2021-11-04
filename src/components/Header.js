@@ -12,7 +12,7 @@ const Header = (props) => {
            
             <nav>
                 <ul>
-                    <li> <h1><Link to="/">PCT </Link></h1></li>
+                    <li> <h1><Link to="/">lovethycrypto</Link></h1></li>
                     {props.user ?
                         <>
                             <li>
@@ -21,11 +21,11 @@ const Header = (props) => {
                                     alt={props.user.displayName} 
                                 />  
                             </li>
-                            <li> Welcome, {props.user.displayName}</li>
+                            <li>{props.user.displayName}</li>
                             
                             <li onClick={logOut}>Logout</li>
                             <li>
-                                <Link to="/dashboard">My Selection</Link>
+                                <Link to="/dashboard">Your List</Link>
                             </li>
                         </>
                         :<li>
