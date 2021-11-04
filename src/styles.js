@@ -3,11 +3,10 @@ import styled from 'styled-components';
 export const StyledHeader = styled.header`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding-left: 1rem;
     height: 6rem;
     background-color: #ba324f;
-   
     color: #ffffff;
     box-shadow: 1px 1px 5px 2px #808080;
     
@@ -38,13 +37,7 @@ export const StyledHeader = styled.header`
             }
         }
     }
-    @media(min-width: 975px) {
-        margin-top: 1rem;
-        flex-direction: row;
-        min-width: 70vw;
-        padding: 0;
-        font-size: 12px;
-    }
+  
     
 `;
 
@@ -56,12 +49,18 @@ export const StyledMain = styled.main`
     flex-direction: column;
     align-items: center;
     padding-top: 1rem;
+    button {
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+    }
   
 `;
 
 
 export const StyledFooter = styled.footer`
     display: flex;
+    background-color: white;
     align-items: center;
     height: 5rem;
     justify-content: center;
@@ -89,16 +88,13 @@ export const StyledSection = styled.section`
 
 
 export const StyledDiv = styled.div`
-   max-width: 400px;
+   max-width: 500px;
 background-color: white;
 border-radius: 20px;
 
-
-
-
     h3 {
-            margin-left: 5rem;
-            margin-right: 5rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
         }
     text-align: center;
     @media(min-width: 975px) {
@@ -107,6 +103,9 @@ border-radius: 20px;
       
     }
 `;
+
+
+
 
 export const StyledForm = styled.form`
     display: flex;

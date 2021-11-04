@@ -53,7 +53,7 @@ const removeCurrency = (currency) => {
                                    
                                     <td>{currency.current_price}</td>
                                    
-                                    <td><Link to={`/currencies/${currency._id}`}>See More Details</Link></td>
+                                    <td><Link to={`/currencies/${currency._id}`}>More Details</Link></td>
                                     <td><button id="delete" onClick={() =>removeCurrency(currency)}>DELETE</button></td>
                                 </tr>
                             ))

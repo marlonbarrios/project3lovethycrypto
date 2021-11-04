@@ -3,8 +3,6 @@ import { logOut } from '../services/firebase';
 import { StyledHeader } from '../styles.js';
 
 
-
-
 const Header = (props) => {
 
     return (
@@ -12,9 +10,10 @@ const Header = (props) => {
            
             <nav>
                 <ul>
-                    <li> <h1><Link to="/">lovethycrypto</Link></h1></li>
+                <li> <h1><Link to="/">lovethycrypto</Link></h1></li>
                     {props.user ?
                         <>
+                           
                             <li>
                             <img 
                                     src={props.user.photoURL} 
@@ -23,10 +22,11 @@ const Header = (props) => {
                             </li>
                             <li>{props.user.displayName}</li>
                             
-                            <li onClick={logOut}>Logout</li>
+                           
                             <li>
-                                <Link to="/dashboard">Your List</Link>
+                                <Link to="/dashboard">My List</Link>
                             </li>
+                            <li onClick={logOut}>Logout</li>
                         </>
                         :<li>
                             <Link to="/login">Login</Link>
