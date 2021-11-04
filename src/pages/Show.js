@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { Helmet } from 'react-helmet';
 import { StyledMain, StyledDiv } from '../styles';
 
@@ -12,19 +12,10 @@ const Show = (props) => {
     <meta name="keywords" content="CRM, Client Relationship Management, Business, Tools" />
 </Helmet>
 
-    const [formState, setFormState ] = useState({
-        content: ""
-    });
 
-    const handleChange = event => (
-        setFormState({ content: event.target.value })
-    );
+   
 
-    const handleSubmit = event => {
-        event.preventDefault();
-        props.createNote(formState, props.currency._id);
-        setFormState({ content: '' }); // reset our form
-    };
+ 
 
     return (
         <>

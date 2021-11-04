@@ -15,8 +15,7 @@ const Header = (props) => {
                         <>
                            
                             <li>
-                            <img 
-                                    src={props.user.photoURL}
+                            <img alt={props.user.displayName} src={props.user.photoURL}
                                 />  
                             </li>
                             <li>{props.user.displayName}</li>
