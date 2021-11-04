@@ -38,6 +38,7 @@ https://lovethycrypto.netlify.app/
 
 ## Future Enhancements
 - Updating the list with the selected items (checkmark state)
+- Add more authentication platforms.
 - Alow the user to create, edit and delete anotations for each currency page.
 - Change color of the price of currencies  with positive or negative changes.
 - Set a notification based on the percentage of price change.
