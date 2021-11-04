@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home';
 import Show from '../pages/Show';
 
 const Main = (props) => {
-  const fetchData = useRef(null);
+
     const [currencies, setCurrencies ] = useState(null); // NOTE: normally I would set this to an empty array
 
     const BASE_URL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false`; // Development
