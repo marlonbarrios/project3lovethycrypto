@@ -83,9 +83,12 @@ export const StyledSection = styled.section`
 
 
 export const StyledDiv = styled.div`
-     justify-content: space-evenly;
-    min-width: 80%;
-    
+   
+background-color: white;
+border-radius: 15px;
+
+
+
     h3 {
             margin-left: 5rem;
             margin-right: 5rem;
@@ -124,7 +127,7 @@ export const StyledTable = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
 
-background: rgba(255,255, 255, 0.73);
+background: rgba(255,255, 255, 1.00);
 border-radius: 15px;
   width: 100%;
   th, td {
