@@ -58,15 +58,14 @@ const Main = (props) => {
     // we will use the useEffect hook to have it's effect function run on page load
 
     // useEffect(() => getPeople()) // why does this syntax create an infinite loop
-    useEffect(() => {
-      fetchData.current = getCurrencies;
-    }); // run once on page load, but not for any subsequent state changes
+    useEffect(() => getCurrencies(), []) //un once on page load, but not for any subsequent state changes
 
     return (
       
           <Switch>
             <Route exact path="/">
-              <Home currencies={currencies} createCurrency={props.createCurrency} user={props.user}/>
+              
+   <Home currencies={currencies} createCurrency={props.createCurrency} user={props.user}/>
             </Route>
             <Route
               path="/currencies/:id"
