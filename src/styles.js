@@ -136,6 +136,11 @@ export const StyledTable = styled.table`
 background: rgba(255,255, 255, 1.00);
 border-radius: 15px;
   width: 100%;
+  button {
+        width: 65px;
+        height: 20px;
+        font-size: 12px;
+    }
   th, td {
         text-align: center;
         padding: 1px;

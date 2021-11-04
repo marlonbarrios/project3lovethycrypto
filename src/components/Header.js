@@ -16,15 +16,14 @@ const Header = (props) => {
                            
                             <li>
                             <img 
-                                    src={props.user.photoURL} 
-                                    alt={props.user.displayName} 
+                                    src={props.user.photoURL}
                                 />  
                             </li>
                             <li>{props.user.displayName}</li>
                             
                            
                             <li>
-                                <Link to="/dashboard">My List</Link>
+                                <Link to="/dashboard">List</Link>
                             </li>
                             <li onClick={logOut}>Logout</li>
                         </>
