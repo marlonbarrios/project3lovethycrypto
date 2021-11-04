@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { StyledMain } from '../styles';
+import { StyledMain} from '../styles';
+
 import { Link } from 'react-router-dom';
 
 const Show = (props) => {
@@ -29,8 +30,8 @@ const Show = (props) => {
         <>
            
             <StyledMain>
-               
-                <section>
+        
+              
 
                     <h1>{props.currency.name}/{props.currency.symbol}</h1>
                  
@@ -65,7 +66,7 @@ const Show = (props) => {
                         ></textarea>
                         <input type="submit" value="Add Note" />
                     </form>
-                </section>
+              
             </StyledMain>
         </>
     );

@@ -6,7 +6,8 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     padding-left: 1rem;
     height: 6rem;
-    background-color: red;
+    background-color: #ba324f;
+   
     color: #ffffff;
     box-shadow: 1px 1px 5px 2px #808080;
     
@@ -42,13 +43,14 @@ export const StyledHeader = styled.header`
 `;
 
 
+
 export const StyledMain = styled.main`
     flex-grow: 1;
     display: flex;  
     flex-direction: column;
     align-items: center;
     padding-top: 1rem;
- 
+  
 `;
 
 
@@ -81,8 +83,7 @@ export const StyledSection = styled.section`
 
 
 export const StyledDiv = styled.div`
-  
-    justify-content: space-evenly;
+     justify-content: space-evenly;
     min-width: 80%;
     
     h3 {
@@ -123,16 +124,17 @@ export const StyledTable = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
 
+background: rgba(255,255, 255, 0.73);
+border-radius: 15px;
   width: 100%;
   th, td {
         text-align: center;
         padding: 1px;
-        border-top: 1px solid black;
-       padding-top: 5px;
+   padding-right: 15px;
+   padding-left: 15px;
+       padding-top: 15px;
   }
-  tr:nth-child(even) {
-        background-color: #f2f2f2;
-  }
+
   @media(min-width: 975px) {
         width: 60%;
         height: 50%;

@@ -3,6 +3,8 @@
 }
 
 body, #root {
+  background-image: url("https://ph-files.imgix.net/1059b243-5a3b-4a53-965e-dad7a62e0145.png?auto=format&auto=compress&codec=mozjpeg&cs=strip");
+  
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -12,4 +14,6 @@ body, #root {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Source Code Pro', monospace;
+
 }

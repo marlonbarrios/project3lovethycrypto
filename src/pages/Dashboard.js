@@ -34,9 +34,9 @@ const removeCurrency = (currency) => {
                         <tr>
                          
                         <th>Logo</th>
-                            <th>Crypto Name</th>
+                            <th>Currency</th>
                             <th>Symbol</th>
-                            <th>Curremt Price</th>
+                            <th>Price</th>
                             <th>Actions</th>
                         </tr>
 
@@ -46,10 +46,13 @@ const removeCurrency = (currency) => {
                         { props.currencies.map (currency => (
                            
                                 <tr key={currency._id}>
+                                     <td><img alt={currency.name}  width="50px" src={currency.image}></img></td>
+                                  
                                     <td>{currency.name}</td>
                                     <td>{currency.symbol}</td>
+                                   
                                     <td>{currency.current_price}</td>
-                                    <td><img alt={currency.name}  width="50px" src={currency.image}></img></td>
+                                   
                                     <td><Link to={`/currencies/${currency._id}`}>See More Details</Link></td>
                                     <td><button id="delete" onClick={() =>removeCurrency(currency)}>DELETE</button></td>
                                 </tr>

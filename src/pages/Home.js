@@ -18,7 +18,7 @@ const Home = (props) => {
          <StyledTable>
              <thead>
                  {/* <h3>Select your favorite currency from the 250 cryptocurrencies listed by Marjet Cap. It will be listed in your dashborad with more data avilable.</h3> */}
-             {new Date().getMonth()}.{new Date().getDay()}.{new Date().getFullYear()}/ {new Date().getHours()}:{new Date().getMinutes()}h 
+             {/* {new Date().getMonth()}.{new Date().getDay()}.{new Date().getFullYear()}/ {new Date().getHours()}:{new Date().getMinutes()}h  */}
            
 
 
