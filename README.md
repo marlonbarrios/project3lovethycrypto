@@ -29,6 +29,7 @@ https://www.heroku.com and frontend Netlify:https://www.netlify.com/
 ## Getting Started
 See Trello Board here:
 https://trello.com/b/Z3sj4ggc/project3love-thy-crypto
+
 See deployed app here:
 https://lovethycrypto.netlify.app/
 
