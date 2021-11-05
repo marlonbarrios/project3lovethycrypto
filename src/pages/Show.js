@@ -12,11 +12,7 @@ const Show = (props) => {
     <meta name="keywords" content="CRM, Client Relationship Management, Business, Tools" />
 </Helmet>
 
-
-   
-
  
-
     return (
         <>
            
@@ -37,26 +33,6 @@ const Show = (props) => {
                     <h3><Link target="_bank" to={{ pathname:`http://www.google.com/search?q=${props.currency.name}+news+link`}}>
             News about {props.currency.name}</Link></h3>
            
-                    {/* {props.currency.notes.length ?
-                        <>
-                            <br />
-                                {props.currency.notes.map(currency => 
-                                    <p style={{margin: '1rem 0'}} key={currency._id}>{currency.content}</p>
-                                )}
-                              
-                            <br />
-                        </>
-                        :
-                        <p>No notes to display at this time</p>
-                    }
-                    <form onSubmit={handleSubmit}>
-                        <textarea 
-                            name="content"
-                            onChange={handleChange}
-                            value={formState.content}
-                        ></textarea>
-                        <input type="submit" value="Add Note" />
-                    </form> */}
                     </StyledDiv>
             </StyledMain>
         </>

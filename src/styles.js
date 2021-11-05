@@ -107,28 +107,6 @@ border-radius: 20px;
 
 
 
-export const StyledForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    label {
-        display: flex;
-        margin: .5rem 0;
-        justify-content: space-between;
-        align-items: center;    
-    }
-    input {
-        margin-left: 1rem;
-        width: 50%;
-        height: 2rem;
-        border-radius: 5px;
-    }
-    input[type="submit"] {
-        width: 100%;
-        margin: 1rem 0;
-    }
-   
-`;
-
 export const StyledTable = styled.table`
   border-collapse: collapse;
   border-spacing: 0;

@@ -8,7 +8,7 @@ const Main = (props) => {
     const [currencies, setCurrencies ] = useState(null); // NOTE: normally I would set this to an empty array
 
     const BASE_URL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false`; // Development
-    // const BASE_URL = 'https://express-people-api.herokuapp.com/people/'; // Production
+   
 
     // helper functions for getting and creating people
     const getCurrencies = async () => {
