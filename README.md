@@ -20,6 +20,7 @@ The user visits the home page with a list of currencies, signs up and logs in; t
 - Google FireBase for authentication
 https://firebase.google.com/
 - Frontend dependencies: firebase 8.2.3, styled-components 5.3.3.
+- - AJAX Asynchronous JavaScript
 - Chrome Development Tools.
 - Deployment:  backend Heroku 
 https://www.heroku.com and frontend Netlify:https://www.netlify.com/
