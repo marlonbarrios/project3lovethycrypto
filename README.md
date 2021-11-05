@@ -1,6 +1,7 @@
-#lovethycrypto: 
+# lovethycrypto: 
 
-a personal cryptocurrency data tracker
+# a personal cryptocurrency data tracker
+(frontend)
 
 ![home page](src/images/home.png 'home page')
 
