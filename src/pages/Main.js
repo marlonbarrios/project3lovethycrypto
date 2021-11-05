@@ -19,18 +19,7 @@ const Main = (props) => {
         setCurrencies(data);
     }
 
-    // const createCurrencies = async (currency) => {
-    //     await fetch(BASE_URL, {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-type': 'Application/json'
-    //         },
-    //         body: JSON.stringify(currency)
-    //     });
-        
-    //     getCurrencies(); // get people and update state after creating a person
-    // }
-
+ 
     const updateCurrencies = async (currency, id) => {
         // make put request to create people
         await fetch(BASE_URL + id, {

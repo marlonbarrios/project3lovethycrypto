@@ -1,8 +1,9 @@
-#lovethycrypto: 
+# lovethycrypto: 
 
-a personal cryptocurrency data tracker
+# a personal cryptocurrency data tracker
+(frontend)
 
-![home page](src/images/home.png 'home page')
+![wireframes](src/images/home.png 'home page')
 
 Description:
 
@@ -20,6 +21,7 @@ The user visits the home page with a list of currencies, signs up and logs in; t
 - Google FireBase for authentication
 https://firebase.google.com/
 - Frontend dependencies: firebase 8.2.3, styled-components 5.3.3.
+- - AJAX Asynchronous JavaScript
 - Chrome Development Tools.
 - Deployment:  backend Heroku 
 https://www.heroku.com and frontend Netlify:https://www.netlify.com/
@@ -29,6 +31,7 @@ https://www.heroku.com and frontend Netlify:https://www.netlify.com/
 ## Getting Started
 See Trello Board here:
 https://trello.com/b/Z3sj4ggc/project3love-thy-crypto
+
 See deployed app here:
 https://lovethycrypto.netlify.app/
 
@@ -37,6 +40,7 @@ https://lovethycrypto.netlify.app/
 
 ## Future Enhancements
 - Updating the list with the selected items (checkmark state)
+- Add more authentication platforms.
 - Alow the user to create, edit and delete anotations for each currency page.
 - Change color of the price of currencies  with positive or negative changes.
 - Set a notification based on the percentage of price change.
@@ -49,7 +53,11 @@ https://lovethycrypto.netlify.app/
 ![dashboard page](src/images/dashboard.png 'dashboard page')
 ![currency page](src/images/show.png 'show page')
 ![youtube page](src/images/youtube.png 'search results youtube page')
+
 ![home page mobile](src/images/mobile_responsive.png 'mobile responsive')
+![wiretrames](src/images/wireframes.png 'wireframes')
+![erd](src/images/erd.png 'wireframes')
+
 
 ## The backend lives here
 https://github.com/marlonbarrios/project-3-backend
