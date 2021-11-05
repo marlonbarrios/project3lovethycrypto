@@ -56,7 +56,7 @@ https://lovethycrypto.netlify.app/
 
 ![home page mobile](src/images/mobile_responsive.png 'mobile responsive')
 ![wiretrames](src/images/wireframes.png 'wireframes')
-![erd](src/images/erd.png 'wireframes')
+![erd](src/images/ERD.png 'wireframes')
 
 
 ## The backend lives here
